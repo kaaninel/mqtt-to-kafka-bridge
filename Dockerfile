@@ -7,4 +7,4 @@ FROM node
 WORKDIR /app
 COPY --from=build /app .
 COPY . .
-RUN ["node", "main.js"]
+ENTRYPOINT ["node", "main.js"]
