@@ -1,0 +1,6 @@
+version: "3.9"
+services:
+  mqtt-kafka-bridge:
+    build: .
+    image: ghcr.io/kaaninel/mqtt-to-kafka-bridge
+    
