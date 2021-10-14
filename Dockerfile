@@ -5,7 +5,7 @@ RUN ["npm", "install"]
 
 FROM node
 WORKDIR /app
-RUN apk --no-cache add \
+RUN apt install \
       bash \
       g++ \
       ca-certificates \
@@ -16,7 +16,7 @@ RUN apk --no-cache add \
       make \
       python
 
-RUN apk add --no-cache --virtual .build-deps gcc zlib-dev libc-dev bsd-compat-headers py-setuptools bash
+RUN apt install build-deps gcc zlib-dev libc-dev bsd-compat-headers py-setuptools bash
 COPY --from=build /app .
 COPY . .
 ENTRYPOINT ["node", "main.js"]
