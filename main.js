@@ -8,3 +8,4 @@ bridge.on("error", console.error);
 bridge
     .run()
     .catch(console.error);
+console.log("running");
