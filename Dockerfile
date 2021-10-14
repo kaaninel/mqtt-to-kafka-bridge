@@ -5,7 +5,7 @@ RUN ["npm", "install"]
 
 FROM node
 WORKDIR /app
-RUN apt install \
+RUN apt install -y \
       bash \
       g++ \
       ca-certificates \
@@ -16,7 +16,7 @@ RUN apt install \
       make \
       python
 
-RUN apt install build-deps gcc zlib-dev libc-dev bsd-compat-headers py-setuptools bash
+RUN apt install -y build-deps gcc zlib-dev libc-dev bsd-compat-headers py-setuptools bash
 COPY --from=build /app .
 COPY . .
 ENTRYPOINT ["node", "main.js"]
